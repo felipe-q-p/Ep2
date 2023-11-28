@@ -1,7 +1,7 @@
 #ifndef AMPLIFICADOR_H //
 #define AMPLIFICADOR_H
 
-#include "CircuitoMISO.h"
+#include "CircuitoSISO.h"
 #include <iostream>
 #include <string>
 #include "Sinal.h"

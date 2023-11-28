@@ -1,9 +1,7 @@
 #include <iostream>
 #include <string>
-#include "Sinal.h"
 #include "Grafico.h"
 #include "Derivador.h"
-#include "CircuitoSISO.h"
 
 Derivador::Derivador() : CircuitoSISO() {
 

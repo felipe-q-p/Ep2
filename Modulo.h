@@ -8,15 +8,15 @@
 #include <list>
 using namespace std;
 
-class Modulo:CircuitoSISO{
+class Modulo: public CircuitoSISO{
     public:
     Modulo();
     virtual ~Modulo();
     void adicionar(CircuitoSISO* circ);
     list<CircuitoSISO*>* getCircuitos();
     void imprimir();
-    private:
-    list<CircuitoSISO*>* listaCircuitos;
+    protected:
+    list<CircuitoSISO*>* listaCircuitosSISO;
 };
 
 
