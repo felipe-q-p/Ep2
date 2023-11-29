@@ -2,8 +2,10 @@
 #include "Circuito.h"
 using namespace std;
 
+int Circuito::n = 0; 
+
 Circuito::Circuito(){
-    static int n = 0;
+    n++;
     ID = n;
 }
 
@@ -12,7 +14,7 @@ Circuito::~Circuito(){
 }
 
 int Circuito::getUltimoID(){
-/*????*/
+    return n;
 }
 
 int Circuito::getID(){

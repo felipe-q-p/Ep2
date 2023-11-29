@@ -8,7 +8,7 @@
 using namespace std;
 
  
-class Amplificador : CircuitoSISO  {
+class Amplificador : public CircuitoSISO  {
     public: 
     Amplificador(double ganho);
     virtual ~Amplificador();

@@ -8,7 +8,7 @@
 #include <string>
 using namespace std;
 
-class Derivador : CircuitoSISO {
+class Derivador : public CircuitoSISO {
     public:
     Derivador();
     virtual ~Derivador();

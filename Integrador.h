@@ -8,7 +8,7 @@
 #include <string>
 using namespace std;
 
-class Integrador : CircuitoSISO {
+class Integrador : public CircuitoSISO {
     public:
     Integrador();
     virtual ~Integrador();

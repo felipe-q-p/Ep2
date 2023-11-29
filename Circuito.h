@@ -11,5 +11,6 @@ class Circuito{
     static int getUltimoID();
     private:
     int ID;
+    static int n;
 };
 #endif
