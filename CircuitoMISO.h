@@ -4,7 +4,6 @@
 #include "Circuito.h"
 #include "Sinal.h"
 
-#include <string>
 
 using namespace std;
 

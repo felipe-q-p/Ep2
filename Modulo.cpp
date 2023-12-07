@@ -4,7 +4,7 @@
 using namespace std;
 
 Modulo::Modulo(): CircuitoSISO(){
-    listaCircuitosSISO = new list<CircuitoSISO*>;
+    listaCircuitosSISO = new list<CircuitoSISO*>();
 }
 
 Modulo::~Modulo(){
@@ -21,9 +21,9 @@ list <CircuitoSISO*>* Modulo::getCircuitos(){
 
 void Modulo::imprimir(){
     cout << "Modulo com ID " << getID() << "e:" <<endl;
-    list<CircuitoSISO*>::iterator i;
+    list<CircuitoSISO*>::iterator i = listaCircuitosSISO -> begin();
     while (i != listaCircuitosSISO->end()) {
-        cout << "Circuito com ID " << (*i) -> getID() << endl;
+        (*i) -> imprimir();
         i++;
     }
 }

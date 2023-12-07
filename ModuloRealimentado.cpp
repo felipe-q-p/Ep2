@@ -7,7 +7,7 @@ using namespace std;
 #define vInicial 0;
 
 ModuloRealimentado::ModuloRealimentado(): Modulo(){
-    moduloInterno = new ModuloEmSerie;
+    moduloInterno = new ModuloEmSerie();
 }
 
 ModuloRealimentado::~ModuloRealimentado(){
@@ -44,7 +44,6 @@ Sinal* ModuloRealimentado::processar(Sinal* sinalIN){
     
     delete[] sequenciaSaidaInvertida;
     delete[] sequenciaDiferenca;
-    delete moduloInterno;
     return saida;
 
 }

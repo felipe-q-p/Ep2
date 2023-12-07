@@ -24,12 +24,12 @@ double qualGanho();
 int qualOperacao();
 int oQueFazer();
 Sinal* novoSinal();
-CircuitoSISO* novaOperacao(Sinal *sinalIN);
+CircuitoSISO* novaOperacao();
 int querSalvar();
 void SalvarCircuito();
 string nomeDoArquivoEscrito();
 string nomeDoArquivoLido();
-
+void novaEstrutura(Sinal *sinalIN);
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -48,7 +48,7 @@ void menu() {
 
     // PRIMEIRA OPCAO DO SIMULINK (quando escolhe o piloto automatico)
     if (i == 1){
-
+        Sinal* sinalIN = novoSinal();
         nomeDoArquivoLido();
     }
 
@@ -223,7 +223,7 @@ Sinal* novoSinal(){
 
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-CircuitoSISO* novaOperacao(Sinal *sinalIN){
+CircuitoSISO* novaOperacao(){
     int operacao; // qual operacao na simulacao do tipo 2
     double a; // ganho
     int Fazer; // como prosseguir depois de uma operacao efetuada
@@ -233,20 +233,17 @@ CircuitoSISO* novaOperacao(Sinal *sinalIN){
     if (operacao == 1){
         a = qualGanho();
         Amplificador* amp = new Amplificador(a); // cria um aplificador para dazer a operacao
-        sinalIN = amp->processar(sinalIN);
         return amp;
     }
 
 
     if (operacao == 2){
         Derivador* d = new Derivador();
-        sinalIN = d->processar(sinalIN);
         return d;
     }
 
     if (operacao == 3){
         Integrador* i = new Integrador();
-        sinalIN = i->processar(sinalIN);
         return i;
     }
 
@@ -270,21 +267,22 @@ void novaEstrutura(Sinal *sinalIN){
 
     if (estrutura == 1){
         ModuloEmSerie* moduloEmSerie = new ModuloEmSerie();
-        moduloEmSerie -> adicionar(novaOperacao(sinalIN));
+        moduloEmSerie -> adicionar(novaOperacao());
+        moduloEmSerie -> getCircuitos();
         moduloEmSerie -> processar(sinalIN);
         delete moduloEmSerie;
     }
 
     if (estrutura == 2){
         ModuloEmParalelo* moduloEmParalelo = new ModuloEmParalelo();
-        moduloEmParalelo -> adicionar(novaOperacao(sinalIN));
+        moduloEmParalelo -> adicionar(novaOperacao());
         moduloEmParalelo -> processar(sinalIN);
         delete moduloEmParalelo;
     }
 
     if (estrutura == 3){
         ModuloRealimentado* moduloRealimentado = new ModuloRealimentado();
-        moduloRealimentado -> adicionar(novaOperacao(sinalIN));
+        moduloRealimentado -> adicionar(novaOperacao());
         moduloRealimentado -> processar(sinalIN);
         delete moduloRealimentado;
     }
@@ -344,3 +342,4 @@ string nomeDoArquivoLido(){
     cin >> nomeDoArquivoLido;
     return nomeDoArquivoLido;
 }
+

@@ -13,5 +13,14 @@ class PersistenciaDeModulo{
     virtual ~PersistenciaDeModulo();
     void salvarEmArquivo(Modulo* mod);
     Modulo* lerDeArquivo();
+    
+    protected:
+    string identificarModulo(CircuitoSISO* circ);
+    string identificarOperacao(CircuitoSISO* circuito);
+    void lerRecursiva(string nomeDoArquivo, Modulo* mod);
+
+    private:
+    string nomeDoArquivo;
+
 };
 #endif
