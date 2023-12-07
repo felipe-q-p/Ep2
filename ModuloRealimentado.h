@@ -2,6 +2,7 @@
 #define MODULOREALIMENTADO_H 
 
 #include "Modulo.h"
+#include "ModuloEmSerie.h"
 #include <iostream>
 #include <string>
 #include <list>
@@ -15,5 +16,6 @@ class ModuloRealimentado: public Modulo{
     private:
     ModuloEmSerie* moduloInterno;
 
+    
 };
 #endif

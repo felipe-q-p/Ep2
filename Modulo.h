@@ -11,10 +11,10 @@ using namespace std;
 class Modulo: public CircuitoSISO{
     public:
     Modulo();
-    virtual ~Modulo();
+    virtual ~Modulo() = 0;
     void adicionar(CircuitoSISO* circ);
-    list<CircuitoSISO*>* getCircuitos();
-    void imprimir();
+    virtual list<CircuitoSISO*>* getCircuitos();
+    virtual void imprimir();
     protected:
     list<CircuitoSISO*>* listaCircuitosSISO;
 };

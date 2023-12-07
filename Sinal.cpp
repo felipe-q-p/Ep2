@@ -4,10 +4,12 @@
 #include "Grafico.h"
 
 Sinal::Sinal(double *sequencia, int comprimento){
+    this -> comprimento = comprimento;
     if (comprimento > 0){
         this -> sequencia = new double[comprimento];
-        this -> sequencia = sequencia;
-        this -> comprimento = comprimento;
+        for (int i = 0; i < comprimento; i++){
+            this ->sequencia[i] = sequencia[i];
+        }
     }
     else{
         throw new invalid_argument("Mensagem de erro");
@@ -48,12 +50,19 @@ void Sinal::imprimir(){
     for (int i = 0; i<comprimento; i++){
         cout << i << "- " << sequencia[i]<< endl;
     }
-    cout <<'--'<< endl;
+    cout <<"--"<< endl;
 }
 
 void Sinal::imprimir(int tamanho){
-    for (int i = 0; i<tamanho; i++){
-        cout << i << "- " << sequencia[i]<< endl;
+    if (comprimento < tamanho){
+        for (int i = 0; i < comprimento; i++) {
+            cout << i << "- "<< this->sequencia[i] << endl;
+    }    
+}
+    else {
+        for (int i = 0; i < tamanho; i++) {
+            cout << i << "- "<< this->sequencia[i] << endl;
+        }
     }
-    cout <<'--'<< endl;
+cout << "--"<< endl;
 }

@@ -18,7 +18,7 @@ Sinal* ModuloEmParalelo::processar(Sinal* sinalIN){
         throw new logic_error("Mensagem de erro");
     }
     else{
-        list<CircuitoSISO*>::iterator i;
+        list<CircuitoSISO*>::iterator i = listaCircuitosSISO -> begin();
         Somador* somadorInterno = new Somador();
         while (i != listaCircuitosSISO->end()) {
             sinal = somadorInterno -> processar(sinal,(*i) -> processar(sinal));

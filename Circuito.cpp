@@ -22,5 +22,5 @@ int Circuito::getID(){
 }
 
 void Circuito::imprimir(){
-    cout << "Circuito com ID " << getID() << endl;
+    cout << "Circuito com ID " << ID << endl;
 }
