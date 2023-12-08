@@ -232,23 +232,5 @@ void testePers1() {
 }
 
 void testePers2() {
-    /*try {*/
-    PersistenciaDeModulo* p = new PersistenciaDeModulo("texto.txt");
-    cout << "aaaaaaaa" << endl;
-    Modulo* m = p->lerDeArquivo();
-    
-    /*list<CircuitoSISO*>* listar = m->getCircuitos();
-    list<CircuitoSISO*>::iterator i = listar->begin();
-    while (i != listar->end()) {
-        cout  << (*i)->qualCircuito() << endl;
-        i++;
-    }
-    } catch (invalid_argument *e) {
-        cout << e->what() << endl;
-        delete e;
-    } catch (logic_error *e) {
-        cout << e->what() << endl;
-        delete e;
-    }*/
 
 }
