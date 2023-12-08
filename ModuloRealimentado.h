@@ -12,7 +12,10 @@ class ModuloRealimentado: public Modulo{
     public:
     ModuloRealimentado();
     virtual ~ModuloRealimentado();
-    Sinal* processar(Sinal*SinalIN);    
+    Sinal* processar(Sinal*SinalIN); 
+    void adicionar (CircuitoSISO *circuito);  
+    list<CircuitoSISO*>* getCircuitos();
+
     private:
     ModuloEmSerie* moduloInterno;
 

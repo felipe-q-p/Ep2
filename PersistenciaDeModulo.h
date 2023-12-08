@@ -18,6 +18,10 @@ class PersistenciaDeModulo{
     string identificarModulo(CircuitoSISO* circ);
     string identificarOperacao(CircuitoSISO* circuito);
     void lerRecursiva(string nomeDoArquivo, Modulo* mod);
+    Modulo* moduloTemp1;
+    Modulo* moduloPrincipal;
+    CircuitoSISO* operacaoTemp;
+
 
     private:
     string nomeDoArquivo;

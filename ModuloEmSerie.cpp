@@ -1,5 +1,6 @@
 #include <iostream>
 #include "ModuloEmSerie.h"
+#include <stdexcept>
 using namespace std;
 
 ModuloEmSerie::ModuloEmSerie(): Modulo(){
@@ -19,10 +20,9 @@ Sinal* ModuloEmSerie::processar(Sinal* sinalIN){
     else{
     list<CircuitoSISO*>::iterator i = listaCircuitosSISO -> begin();
     while (i != listaCircuitosSISO->end()) {
-        cout << (*i) -> getID() << endl;
         sinal = (*i) -> processar(sinal);
         i++;
     }
-    }
     return sinal;
+    }
 }
